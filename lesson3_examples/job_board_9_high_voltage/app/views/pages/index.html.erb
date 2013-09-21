@@ -1,0 +1,13 @@
+<%= link_to "About", "/pages/about" %>
+<%= link_to "Contact", page_path('contact') %>
+<%= link_to "FAQ", page_path('faq') %>
+
+
+
+
+<h1>Latest Jobs</h1>
+
+<% @jobs.each do |job| %>
+  <p><strong><%= job.title %></strong></p>
+  <p><%= job.content %></p>
+<% end %>
