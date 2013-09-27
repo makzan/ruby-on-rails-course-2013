@@ -1,0 +1,38 @@
+<%= simple_form_for @job, :html => { :multipart => true } do |f| %>
+  <% if @job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+      <% @job.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.input :title %><br />
+  </div>
+  <div class="field">
+    <%= f.input :content %><br />
+  </div>
+  <div class="field">
+    <%= f.label :category_id %>
+    <%= f.collection_select :category_id, Category.all, :id, :title, prompt: 'Choose a category' %><br />
+  </div>
+  <div class="field">
+    <%= f.input :salary %><br />
+  </div>
+  <div class="field">
+    <%= f.input :valid_till %><br />
+  </div>
+  <div class="field">
+    <%= f.label :poster %>
+    <%= image_tag @job.poster.url(:thumb) %>
+    <%= f.file_field :poster %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @job.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @job.content %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @job.category %>
+</p>
+
+<p>
+  <b>Salary:</b>
+  <%= @job.salary %>
+</p>
+
+<hr>
+
+<h2>All Comments</h2>
+<% @job.comments.each do |comment| %>
+<div>
+  <p>
+    <b>
+    <%= comment.name %>
+    </b>
+    said at
+    <%= comment.created_at.to_date %>
+  </p>
+  <p>
+    <%= comment.content %>
+  </p>
+</div>
+<% end %>
+
+<h1>New comment</h1>
+
+<%= render 'comments/form' %>
+
+<hr>
+
+<%= link_to 'Show Comments', job_comments_path(@job) %> |
+
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Back', jobs_path %>
