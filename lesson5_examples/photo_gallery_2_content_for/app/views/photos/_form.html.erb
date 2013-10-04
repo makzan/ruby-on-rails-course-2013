@@ -1,0 +1,18 @@
+<%= form_for @photo, html: { :multipart => true } do |f| %>
+  <p>
+    <%= f.label :file, 'Choose a image file.' %> <br>
+    <%= f.file_field :file %>
+  </p>
+
+  <p>
+    <%= f.label :title %> <br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.submit 'Upload Photo' %>
+    or
+    <%= link_to 'Cancel', @photo %>
+  </p>
+
+<%- end %>

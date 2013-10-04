@@ -1,7 +1,7 @@
 class Category < ActiveRecord::Base
   attr_accessible :title
 
-  has_many :job
+  has_many :jobs
 
   def to_s
     title

@@ -1,0 +1,9 @@
+<h1><%= @album.title %></h1>
+
+<p><%= link_to 'Upload new photo', new_album_photo_path(@album) %></p>
+
+<% @album.photos.each do |photo| %>
+  <%= link_to [@album, photo] do %>
+    <%= image_tag photo.file.url(:thumb) %>
+  <% end %>
+<% end %>

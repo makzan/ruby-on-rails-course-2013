@@ -1,0 +1,4 @@
+<%= image_tag @photo.file.url(:medium) %> <br>
+<%= @photo.title %>
+
+<%= link_to 'Edit', edit_photo_path(@photo) %>
