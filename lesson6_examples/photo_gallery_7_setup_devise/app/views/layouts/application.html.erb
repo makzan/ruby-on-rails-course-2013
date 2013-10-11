@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    <%- if content_for? :page_title -%>
+      <%= yield :page_title %> – Photo Gallery
+    <%- else -%>
+      Photo Gallery
+    <%- end -%>
+  </title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <header class='row'>
+    <div class='full col'>
+      <nav>
+        <ul>
+          <li><%= link_to 'Home', root_path %></li>
+          <li>Link</li>
+          <li>Link</li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class='row'>
+    <div class='full col'>
+      <%= yield %>
+    </div>
+  </div>
+
+  <footer class='row'>
+    <div class='half col'>
+      <nav>
+        <ul>
+          <li>Link</li>
+          <li>Link</li>
+          <li>Link</li>
+        </ul>
+      </nav>
+    </div>
+    <div class="half col">
+      <span class='copyright'>&copy; 2013</span>
+    </div>
+  </footer>
+
+</body>
+</html>

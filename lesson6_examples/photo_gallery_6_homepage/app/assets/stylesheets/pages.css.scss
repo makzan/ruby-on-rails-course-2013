@@ -1,0 +1,86 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* SwipeJS */
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap > div {
+  float:left;
+  width:100%;
+  position: relative;
+}
+/* End SwipeJS */
+
+/* Layout */
+* {
+    box-sizing: border-box;
+}
+.row {
+  width: 960px;
+  max-width: 100%;
+  margin: auto;
+  overflow: auto;
+
+  .row {
+    width: auto;
+    max-width: none;
+    margin: 0 -5px;
+  }
+}
+
+.col {
+  float:left;
+
+  padding: 0 5px;
+
+  &.full {
+    width: 100%;
+  }
+
+  &.half {
+    width: 50%;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+
+/* page element */
+nav {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      float: left;
+      padding-right: 10px;
+    }
+  }
+}
+
+.copyright {
+  text-align: right;
+}
+
+.popular-photo {
+  width: 80px;
+  height: 80px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  float: left;
+}
+
+
