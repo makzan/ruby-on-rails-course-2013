@@ -1,0 +1,14 @@
+<% content_for :page_title do
+  @photo.title
+end %>
+
+<p>
+  <%= link_to @album.title, @album %>
+  /
+  <%= @photo.file_file_name %>
+</p>
+
+<%= image_tag @photo.file.url(:medium) %> <br>
+<%= @photo.title %>
+
+<%= link_to 'Edit', edit_album_photo_path(@album, @photo) %>
