@@ -13,7 +13,7 @@
     <h2>Popular Photos</h2>
     <%- @photos.each do |p| %>
       <%= link_to album_photo_path(p.album, p) do %>
-      <div class='popular-photo' style='background:url(<%= image_path p.file.url(:thumb) %>)'></div>
+      <div class='popular-photo' style='background-image:url(<%= image_path p.file.url(:thumb) %>)'></div>
       <%- end %>
     <%- end %>
   </div>

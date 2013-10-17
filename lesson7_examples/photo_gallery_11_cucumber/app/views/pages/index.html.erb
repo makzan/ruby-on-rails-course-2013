@@ -1,0 +1,29 @@
+<div class='row'>
+  <div id='slider' class='swipe'>
+    <div class='swipe-wrap'>
+      <%- @slide_photos.each do |p| %>
+        <div><%= image_tag p.file.url(:cover) %></div>
+      <%- end %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="half col">
+    <h2>Popular Photos</h2>
+    <%- @photos.each do |p| %>
+      <%= link_to album_photo_path(p.album, p) do %>
+      <div class='popular-photo' style='background:url(<%= image_path p.file.url(:thumb) %>)'></div>
+      <%- end %>
+    <%- end %>
+  </div>
+  <div class="half col">
+    <h2>Create your photo archive</h2>
+    <% if user_signed_in? %>
+      <p><%= link_to 'Create Album', new_album_path %></p>
+    <% else %>
+      <p><%= link_to 'Register Now', new_user_registration_path %></p>
+    <% end %>
+  </div>
+</div>
+

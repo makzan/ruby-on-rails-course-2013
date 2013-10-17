@@ -1,0 +1,11 @@
+<h1><%= @album.title %></h1>
+
+<%- if user_signed_in? and current_user == @album.user %>
+  <p><%= link_to 'Upload new photo', new_album_photo_path(@album) %></p>
+<%- end %>
+
+<% @album.photos.each do |photo| %>
+  <%= link_to [@album, photo] do %>
+    <%= image_tag photo.file.url(:thumb) %>
+  <% end %>
+<% end %>

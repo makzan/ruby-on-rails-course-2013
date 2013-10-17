@@ -14,3 +14,16 @@
 //= require jquery_ujs
 //= require swipe
 //= require_tree .
+
+
+
+
+
+
+
+
+
+
+
+
+
