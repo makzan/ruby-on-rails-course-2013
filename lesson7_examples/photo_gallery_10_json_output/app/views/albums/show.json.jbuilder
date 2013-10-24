@@ -5,7 +5,7 @@ json.data do |json|
   json.link album_url(@album)
 
   # user
-  json.user do |json|
+  json.owner do |json|
     json.id @album.user.id
     json.email @album.user.email
   end
@@ -15,3 +15,11 @@ json.data do |json|
     json.partial! photo
   end
 end
+
+
+
+
+
+
+
+
